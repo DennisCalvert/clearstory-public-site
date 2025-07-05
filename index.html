@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clear Story Productions</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue", sans-serif;
+        scroll-behavior: smooth;
+        color: #fff;
+        background-color: #000;
+        overflow-x: hidden;
+      }
+
+      /* Fixed nav */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 1rem 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        z-index: 10000;
+        align-items: center;
+      }
+
+      nav a {
+        color: #fff;
+        margin: 0.5rem 1rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f9c74f;
+      }
+
+      /* Spacer to push content below fixed nav */
+      .nav-spacer {
+        height: 70px; /* match nav height */
+      }
+
+      section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 2rem;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+      }
+
+      .parallax-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+        will-change: transform;
+        pointer-events: none;
+        opacity: 0.3;
+      }
+
+      .project-container {
+        background-color: #fff;
+        color: #333;
+        padding: 15px;
+      }
+      h1,
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      #contact {
+        background: #111;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        h1,
+        h2 {
+          font-size: 2rem;
+        }
+
+        nav {
+          justify-content: center;
+        }
+
+        nav a {
+          margin: 0.5rem;
+          font-size: 1rem;
+        }
+
+        section {
+          padding: 3rem 1rem;
+        }
+
+        .nav-spacer {
+          height: 120px;
+        }
+      }
+
+      /* FILMS SECTION */
+      .films {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        align-content: center;
+        gap: 1.5rem;
+        padding: 2rem;
+      }
+      .film-container {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .film-thumbnail {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .film-info {
+        padding: 1.5rem;
+      }
+
+      .film-title {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem 0;
+      }
+
+      .film-description {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      @media (min-width: 700px) {
+        .film-container {
+          flex-direction: row;
+        }
+
+        .film-thumbnail {
+          width: 40%;
+          height: auto;
+        }
+
+        .film-info {
+          width: 60%;
+          padding: 2rem;
+        }
+      }
+      /* BIO SECTION */
+
+      .bio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 800px;
+        margin: 2rem auto;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .bio-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      .bio-name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+        color: #000;
+      }
+
+      .bio-title {
+        color: #777;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .bio-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        /* text-align: center; */
+        padding: 0 1rem;
+        color: #555;
+      }
+
+      @media (min-width: 600px) {
+        .bio-container {
+          flex-direction: row;
+          text-align: left;
+          padding: 2rem;
+        }
+
+        .bio-photo {
+          margin: 0 2rem 0 0;
+        }
+
+        .bio-text {
+          flex: 1;
+          /* color: #000; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed nav -->
+    <nav>
+      <a href="#hero"
+        ><img
+          src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/ClearStoryLogoWhite.png"
+          style="width: 150px"
+      /></a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Spacer to offset fixed nav -->
+    <div class="nav-spacer"></div>
+
+    <section id="hero">
+      <div
+        class="parallax-bg"
+        style="
+          background-image: url('https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/666738c0876086543299c234/images/l/66abd8c91f8acf3bef7c17ce.jpeg');
+        "
+      ></div>
+      <div class="content">
+        <h1>
+          <img
+            src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/ClearStoryLogoWhite.png"
+            style="max-width: 100%"
+          />
+        </h1>
+        <p>Bold cinematic storytelling.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div
+        class="parallax-bg"
+        style="
+          background-image: url('https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66d0a7ffeb739771171a6f22/images/l/675137cd638388fc9bffb71a.jpeg');
+        "
+      ></div>
+      <div class="content">
+        <h2>About Us</h2>
+        <p style="text-align: left">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+          risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
+          ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula
+          massa, varius a, semper congue, euismod non, mi.
+        </p>
+      </div>
+    </section>
+
+    <div id="projects">
+      <div class="project-container">
+        <h2>Selected Projects</h2>
+        <p>
+          From shorts to branded content, our films leave lasting impressions
+          across the globe.
+        </p>
+        <div class="films">
+          <div class="film-container">
+            <img
+              class="film-thumbnail"
+              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587ff1844b04f660b0e867.jpeg"
+              alt="Film Thumbnail"
+            />
+            <div class="film-info">
+              <h2 class="film-title">The Last Light</h2>
+              <p class="film-description">
+                In a city swallowed by shadow, one photographer dares to chase
+                the fading glow of humanity. “The Last Light” is a short film
+                about resilience, memory, and the beauty of vanishing moments.
+              </p>
+            </div>
+          </div>
+          <!-- -->
+          <div class="film-container">
+            <img
+              class="film-thumbnail"
+              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66d0a7ffeb739771171a6f22/images/l/6751384c638388fc9bffb728.jpeg"
+              alt="Film Thumbnail"
+            />
+            <div class="film-info">
+              <h2 class="film-title">The Fall</h2>
+              <p class="film-description">In a city swallowed by shadow.</p>
+            </div>
+          </div>
+          <!-- -->
+          <div class="film-container">
+            <img
+              class="film-thumbnail"
+              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/686200b278c1e715f6a4a044/images/l/686943ca20d762bf86e36eb3.jpeg"
+              alt="Film Thumbnail"
+            />
+            <div class="film-info">
+              <h2 class="film-title">The Fall</h2>
+              <p class="film-description">
+                In a city swallowed by shadow, one photographer dares to chase
+                the fading glow of humanity. “The Last Light” is a short film
+                about resilience, memory, and the beauty of vanishing moments.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div>
+          <div>
+            <img
+              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587ff1844b04f660b0e867.jpeg"
+              style="width: 300px"
+            />
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <section id="team">
+      <div
+        class="parallax-bg"
+        style="
+          background-image: url('https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66d0a7ffeb739771171a6f22/images/l/67513839638388fc9bffb725.jpeg');
+        "
+      ></div>
+      <div class="content">
+        <h2>Our Team</h2>
+        <p>
+          A crew of visionaries—directors, editors, and storytellers working in
+          harmony.
+        </p>
+
+        <div class="bio-container">
+          <img
+            class="bio-photo"
+            src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66ac0d64aa8b583850f16438/images/l/66c39c3d7dde9ad9c0f0576c.jpeg"
+            alt="Profile photo"
+          />
+          <div class="bio-text">
+            <h2 class="bio-name">Dennis Calvert</h2>
+            <p class="bio-title">Creative Director & Filmmaker</p>
+            <p class="bio-description">
+              Dennis is a passionate storyteller with over a decade of
+              experience crafting visual narratives. Their work spans film,
+              design, and branding—blending creativity with strategic thinking
+              to inspire and inform audiences around the world.
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-container">
+          <img
+            class="bio-photo"
+            src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66ac0d64aa8b583850f16438/images/l/66ac0e75c444babeedbe6785.jpeg"
+            alt="Profile photo"
+          />
+          <div class="bio-text">
+            <h2 class="bio-name">Dennis Calvert</h2>
+            <p class="bio-title">Creative Director & Filmmaker</p>
+            <p class="bio-description">
+              Dennis is a passionate storyteller with over a decade of
+              experience crafting visual narratives. Their work spans film,
+              design, and branding—blending creativity with strategic thinking
+              to inspire and inform audiences around the world.
+            </p>
+          </div>
+        </div>
+        <!-- BIO START-->
+        <div class="bio-container">
+          <img
+            class="bio-photo"
+            src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66ac0d64aa8b583850f16438/images/l/66ac0df3aa8b583850f16439.jpeg"
+            alt="Profile photo"
+          />
+          <div class="bio-text">
+            <h2 class="bio-name">Dennis Calvert</h2>
+            <p class="bio-title">Creative Director & Filmmaker</p>
+            <p class="bio-description">
+              Dennis is a passionate storyteller with over a decade of
+              experience crafting visual narratives. Their work spans film,
+              design, and branding—blending creativity with strategic thinking
+              to inspire and inform audiences around the world.
+            </p>
+          </div>
+        </div>
+        <!-- BIO END-->
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="content">
+        <h2>Contact</h2>
+        <p>
+          Email: contact@parallaxfilmco.com<br />Instagram: @parallaxfilmco<br />Location:
+          Birmingham, AL
+        </p>
+      </div>
+    </section>
+
+    <script>
+      const parallaxLayers = document.querySelectorAll(".parallax-bg");
+
+      window.addEventListener("scroll", () => {
+        let scrollTop = window.pageYOffset;
+
+        parallaxLayers.forEach((layer) => {
+          const speed = 0.4;
+          const offset = layer.parentElement.offsetTop;
+          const height = layer.parentElement.offsetHeight;
+          const relativeY = scrollTop - offset;
+
+          if (
+            scrollTop + window.innerHeight > offset &&
+            scrollTop < offset + height
+          ) {
+            layer.style.transform = `translateY(${relativeY * speed}px)`;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
