@@ -39,7 +39,8 @@
         transition: color 0.3s;
       }
 
-      nav a:hover {
+      .nav a:hover,
+      .nav a.active {
         color: #f9c74f;
       }
 
@@ -169,9 +170,9 @@
       }
 
       @media (min-width: 700px) {
-        .film-container {
+        /* .film-container {
           flex-direction: row;
-        }
+        } */
 
         .film-thumbnail {
           width: 40%;
@@ -242,11 +243,32 @@
           /* color: #000; */
         }
       }
+
+      /* VIDEO PLAYER */
+      /* #videoPlayer {
+        position: fixed;
+        position: fixed;
+        top: 0;
+        z-index: 20000;
+        width: 100%;
+        background: #000;
+        height: 100vh;
+        transform: translate(100vw, 0);
+        border: 5px red;
+        transition: transform 0.4s;
+        display: flex;
+        flex-direction: column;
+      }
+      /* transform: translate(0, 0);*/
+      .videoPlayerActive {
+        height: 100vh;
+        overflow: hidden;
+      } */
     </style>
   </head>
   <body>
     <!-- Fixed nav -->
-    <nav>
+    <nav class="nav-links">
       <a href="#hero"
         ><img
           src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/ClearStoryLogoWhite.png"
@@ -306,11 +328,24 @@
         </p>
         <div class="films">
           <div class="film-container">
-            <img
+            <!-- <img
               class="film-thumbnail"
               src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587ff1844b04f660b0e867.jpeg"
               alt="Film Thumbnail"
-            />
+            /> -->
+            <video
+              playsinline=""
+              muted=""
+              loop=""
+              id="myVideo"
+              controls
+              style="width: 100%; height: auto"
+            >
+              <source
+                src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
+                type="video/mp4"
+              />
+            </video>
             <div class="film-info">
               <h2 class="film-title">The Last Light</h2>
               <p class="film-description">
@@ -318,34 +353,67 @@
                 the fading glow of humanity. “The Last Light” is a short film
                 about resilience, memory, and the beauty of vanishing moments.
               </p>
+              <!-- <p><button class="watchFilm">Watch</button></p> -->
             </div>
           </div>
           <!-- -->
           <div class="film-container">
-            <img
+            <!-- <img
               class="film-thumbnail"
-              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66d0a7ffeb739771171a6f22/images/l/6751384c638388fc9bffb728.jpeg"
+              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587ff1844b04f660b0e867.jpeg"
               alt="Film Thumbnail"
-            />
+            /> -->
+            <video
+              playsinline=""
+              muted=""
+              loop=""
+              id="myVideo"
+              controls
+              style="width: 100%; height: auto"
+            >
+              <source
+                src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
+                type="video/mp4"
+              />
+            </video>
             <div class="film-info">
-              <h2 class="film-title">The Fall</h2>
-              <p class="film-description">In a city swallowed by shadow.</p>
-            </div>
-          </div>
-          <!-- -->
-          <div class="film-container">
-            <img
-              class="film-thumbnail"
-              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/686200b278c1e715f6a4a044/images/l/686943ca20d762bf86e36eb3.jpeg"
-              alt="Film Thumbnail"
-            />
-            <div class="film-info">
-              <h2 class="film-title">The Fall</h2>
+              <h2 class="film-title">The Last Light</h2>
               <p class="film-description">
                 In a city swallowed by shadow, one photographer dares to chase
                 the fading glow of humanity. “The Last Light” is a short film
                 about resilience, memory, and the beauty of vanishing moments.
               </p>
+              <!-- <p><button class="watchFilm">Watch</button></p> -->
+            </div>
+          </div>
+          <!-- -->
+          <div class="film-container">
+            <!-- <img
+              class="film-thumbnail"
+              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587ff1844b04f660b0e867.jpeg"
+              alt="Film Thumbnail"
+            /> -->
+            <video
+              playsinline=""
+              muted=""
+              loop=""
+              id="myVideo"
+              controls
+              style="width: 100%; height: auto"
+            >
+              <source
+                src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="film-info">
+              <h2 class="film-title">The Last Light</h2>
+              <p class="film-description">
+                In a city swallowed by shadow, one photographer dares to chase
+                the fading glow of humanity. “The Last Light” is a short film
+                about resilience, memory, and the beauty of vanishing moments.
+              </p>
+              <!-- <p><button class="watchFilm">Watch</button></p> -->
             </div>
           </div>
         </div>
@@ -399,13 +467,13 @@
             alt="Profile photo"
           />
           <div class="bio-text">
-            <h2 class="bio-name">Dennis Calvert</h2>
-            <p class="bio-title">Creative Director & Filmmaker</p>
+            <h2 class="bio-name">Erin Williams</h2>
+            <p class="bio-title">Sound</p>
             <p class="bio-description">
-              Dennis is a passionate storyteller with over a decade of
-              experience crafting visual narratives. Their work spans film,
-              design, and branding—blending creativity with strategic thinking
-              to inspire and inform audiences around the world.
+              Erin is a passionate storyteller with over a decade of experience
+              crafting visual narratives. Their work spans film, design, and
+              branding—blending creativity with strategic thinking to inspire
+              and inform audiences around the world.
             </p>
           </div>
         </div>
@@ -417,7 +485,7 @@
             alt="Profile photo"
           />
           <div class="bio-text">
-            <h2 class="bio-name">Dennis Calvert</h2>
+            <h2 class="bio-name">Jeremy Davis</h2>
             <p class="bio-title">Creative Director & Filmmaker</p>
             <p class="bio-description">
               Dennis is a passionate storyteller with over a decade of
@@ -435,12 +503,21 @@
       <div class="content">
         <h2>Contact</h2>
         <p>
-          Email: contact@parallaxfilmco.com<br />Instagram: @parallaxfilmco<br />Location:
+          Email: dennis@denniscalvert.net<br />Instagram: @dennis_calvert<br />Location:
           Birmingham, AL
         </p>
       </div>
     </section>
 
+    <!-- <div id="videoPlayer">
+      <button id="closeFilm">X</button>
+      <video playsinline="" muted="" loop="" id="myVideo" controls>
+        <source
+          src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div> -->
     <script>
       const parallaxLayers = document.querySelectorAll(".parallax-bg");
 
@@ -461,6 +538,43 @@
           }
         });
       });
+
+      const videoPlayer = document.getElementById("videoPlayer");
+      const watchFilmButtons = document.querySelectorAll(".watchFilm");
+      watchFilmButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          videoPlayer.style.transform = "translate(0, 0)";
+          window.body.classList.add("videoPlayerActive");
+        });
+      });
+      const closeFilmButton = document.getElementById("closeFilm");
+      closeFilmButton.addEventListener("click", () => {
+        videoPlayer.style.transform = "translate(100vw, 0)";
+        window.body.classList.remove("videoPlayerActive");
+      });
+
+      //   const sections = document.querySelectorAll("section, #projects");
+      //   const navLinks = document.querySelectorAll(".nav-links a");
+
+      //   function highlightNav() {
+      //     let scrollPos = window.scrollY || document.documentElement.scrollTop;
+      //     sections.forEach((section) => {
+      //       const id = section.getAttribute("id");
+      //       const offsetTop = section.offsetTop - 80;
+      //       const offsetBottom = offsetTop + section.offsetHeight;
+
+      //       if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+      //         navLinks.forEach((link) => {
+      //           link.classList.remove("active");
+      //           if (link.getAttribute("href") === `#${id}`) {
+      //             link.classList.add("active");
+      //           }
+      //         });
+      //       }
+      //     });
+      //   }
+
+      //   window.addEventListener("scroll", highlightNav);
     </script>
   </body>
 </html>
