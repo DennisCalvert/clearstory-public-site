@@ -138,7 +138,7 @@
         flex-direction: column;
         align-content: center;
         gap: 1.5rem;
-        padding: 2rem;
+        /* padding: 2rem; */
       }
       .film-container {
         display: flex;
@@ -173,9 +173,21 @@
       }
 
       @media (min-width: 700px) {
-        /* .film-container {
+        .films {
           flex-direction: row;
-        } */
+        }
+
+        .film-container {
+          width: 49%;
+          /* display: flex; */
+          /* flex-wrap: wrap; */
+          /* justify-content: center; */
+          /* align-items: center; */
+          /* flex-direction: row; */
+          /* align-content: center; */
+          /* gap: 1.5rem; */
+          /* padding: 2rem; */
+        }
 
         .film-thumbnail {
           width: 40%;
@@ -368,8 +380,29 @@
     </nav>
 
     <!-- Spacer to offset fixed nav -->
-    <div class="nav-spacer"></div>
-
+    <!-- <div class="nav-spacer"></div> -->
+    <div class="her-film">
+      <!-- <img
+          class="film-thumbnail"
+          src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587ff1844b04f660b0e867.jpeg"
+          alt="Film Thumbnail"
+        /> -->
+      <video
+        playsinline=""
+        muted=""
+        loop=""
+        id="myVideo"
+        controls
+        style="width: 100%; height: auto"
+        autoplay
+        poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66ac0d64aa8b583850f16438/images/l/66c402653416266a800cb605.jpeg"
+      >
+        <source
+          src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
     <section id="hero">
       <div
         class="parallax-bg"
@@ -427,6 +460,7 @@
               id="myVideo"
               controls
               style="width: 100%; height: auto"
+              poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587ff1844b04f660b0e867.jpeg"
             >
               <source
                 src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
@@ -457,6 +491,7 @@
               id="myVideo"
               controls
               style="width: 100%; height: auto"
+              poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/675881eb844b04f660b0e870.jpeg"
             >
               <source
                 src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
@@ -487,6 +522,7 @@
               id="myVideo"
               controls
               style="width: 100%; height: auto"
+              poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66ac0d64aa8b583850f16438/images/l/66c4030f3416266a800cb607.jpeg"
             >
               <source
                 src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
@@ -501,6 +537,36 @@
                 about resilience, memory, and the beauty of vanishing moments.
               </p>
               <!-- <p><button class="watchFilm">Watch</button></p> -->
+            </div>
+          </div>
+          <!-- -->
+          <div class="film-container">
+            <!-- <img
+              class="film-thumbnail"
+              src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/67550fea49ee574c80dfcae0/images/l/67587ff1844b04f660b0e867.jpeg"
+              alt="Film Thumbnail"
+            /> -->
+            <video
+              playsinline=""
+              muted=""
+              loop=""
+              id="myVideo"
+              controls
+              style="width: 100%; height: auto"
+              poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66ac0d64aa8b583850f16438/images/l/66c402653416266a800cb605.jpeg"
+            >
+              <source
+                src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="film-info">
+              <h2 class="film-title">The Last Light</h2>
+              <p class="film-description">
+                In a city swallowed by shadow, one photographer dares to chase
+                the fading glow of humanity. “The Last Light” is a short film
+                about resilience, memory, and the beauty of vanishing moments.
+              </p>
             </div>
           </div>
         </div>
@@ -544,6 +610,18 @@
               design, and branding—blending creativity with strategic thinking
               to inspire and inform audiences around the world.
             </p>
+            <p class="bio-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+              risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
+              nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
+              ligula massa, varius a, semper congue, euismod non, mi.
+            </p>
+            <p class="bio-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+              risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
+              nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
+              ligula massa, varius a, semper congue, euismod non, mi.
+            </p>
           </div>
         </div>
 
@@ -562,6 +640,12 @@
               branding—blending creativity with strategic thinking to inspire
               and inform audiences around the world.
             </p>
+            <p class="bio-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+              risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
+              nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
+              ligula massa, varius a, semper congue, euismod non, mi.
+            </p>
           </div>
         </div>
         <!-- BIO START-->
@@ -579,6 +663,11 @@
               experience crafting visual narratives. Their work spans film,
               design, and branding—blending creativity with strategic thinking
               to inspire and inform audiences around the world.
+            </p>
+            <p class="bio-description">
+              Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
+              adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+              diam.
             </p>
           </div>
         </div>
