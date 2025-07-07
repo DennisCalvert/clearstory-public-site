@@ -19,6 +19,17 @@
         overflow-x: hidden;
       }
 
+      .logo-nav {
+        width: 150px;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .logo-nav {
+          width: 120px;
+        }
+      }
+
       /* Fixed nav */
       nav {
         position: fixed;
@@ -34,6 +45,11 @@
         align-items: center;
       }
 
+      @media (max-width: 768px) {
+        nav {
+          padding: 1em 0;
+        }
+      }
       nav a {
         color: #fff;
         margin: 0.5rem 1rem;
@@ -117,7 +133,7 @@
 
         nav a {
           margin: 0.5rem;
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
 
         section {
@@ -125,7 +141,7 @@
         }
 
         .nav-spacer {
-          height: 120px;
+          height: 150px;
         }
       }
 
@@ -371,7 +387,7 @@
       <a href="#hero"
         ><img
           src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/ClearStoryLogoWhite.png"
-          style="width: 150px"
+          class="logo-nav"
       /></a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -380,7 +396,7 @@
     </nav>
 
     <!-- Spacer to offset fixed nav -->
-    <!-- <div class="nav-spacer"></div> -->
+    <div class="nav-spacer"></div>
     <div class="her-film">
       <!-- <img
           class="film-thumbnail"
