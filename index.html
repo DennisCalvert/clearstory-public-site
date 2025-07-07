@@ -299,6 +299,34 @@
       form button:hover {
         background-color: #49b1c7;
       }
+
+      .contact-container {
+        width: 100%;
+        text-align: left;
+      }
+
+      @media (min-width: 768px) {
+        .contact-container {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: flex-start;
+          justify-content: center;
+          /* width: 100%; */
+          gap: 20px;
+          /* text-align: left; */
+          max-width: 900px;
+        }
+        #contact-info-wrapper {
+          width: 30%;
+        }
+        #contact-info-wrapper p {
+          font-size: 1em;
+        }
+        #contact-form-wrapper {
+          width: 70%;
+        }
+      }
+
       /* VIDEO PLAYER */
       /* #videoPlayer {
         position: fixed;
@@ -559,57 +587,64 @@
     </section>
 
     <section id="contact">
-      <div class="content">
-        <h2>Contact</h2>
-        <p>
-          Email: dennis@denniscalvert.net<br />Instagram: @dennis_calvert<br />Location:
-          Birmingham, AL
-        </p>
-        <!-- <h2>Contact</h2> -->
-        <p>
-          <a style="color: #ff00f0" href="tel:+2563390748" id="phone-num"
-            >256-339-0748</a
-          >
-        </p>
-        <form id="contact-form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="from">Email:</label>
-          <input type="email" id="from" name="from" required />
-
-          <input
-            type="hidden"
-            id="subject"
-            name="subject"
-            value="Photography Inquiry"
-          />
-
-          <label for="text">Message:</label>
-          <textarea id="text" name="text" rows="5" required></textarea>
-
-          <button type="submit">Send</button>
-        </form>
-        <div id="loading" class="hidden">
-          <div class="loading-box lb0"></div>
-          <div class="loading-box lb1"></div>
-          <div class="loading-box lb2"></div>
-          <div class="loading-box lb3"></div>
+      <div class="contact-container">
+        <div class="contact-block" id="contact-info-wrapper">
+          <h2>Contact</h2>
+          <p>
+            Email: dennis@denniscalvert.net<br />Instagram: @dennis_calvert<br />Location:
+            Birmingham, AL
+          </p>
+          <!-- <h2>Contact</h2> -->
+          <p>
+            <a
+              style="color: #3c8fa1; text-decoration: none"
+              href="tel:+2563390748"
+              id="phone-num"
+              >256-339-0748</a
+            >
+          </p>
         </div>
-        <div
-          id="contact-success"
-          class="hidden"
-          style="
-            text-align: left;
-            font-size: 1.2em;
-            padding: 20px 0;
-            max-width: 600px;
-            margin: 0 auto;
-          "
-        >
-          Message delivered. Thanks for reaching out!
-          <!-- Check your inbox for an info sheet and I will
+        <div class="contact-block" id="contact-form-wrapper">
+          <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="from">Email:</label>
+            <input type="email" id="from" name="from" required />
+
+            <input
+              type="hidden"
+              id="subject"
+              name="subject"
+              value="Photography Inquiry"
+            />
+
+            <label for="text">Message:</label>
+            <textarea id="text" name="text" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+          </form>
+          <div id="loading" class="hidden">
+            <div class="loading-box lb0"></div>
+            <div class="loading-box lb1"></div>
+            <div class="loading-box lb2"></div>
+            <div class="loading-box lb3"></div>
+          </div>
+          <div
+            id="contact-success"
+            class="hidden"
+            style="
+              text-align: left;
+              font-size: 1.2em;
+              padding: 20px 0;
+              max-width: 600px;
+              margin: 0 auto;
+            "
+          >
+            Message delivered. Thanks for reaching out!
+            <!-- Check your inbox for an info sheet and I will
           be personally following up soon. -->
+          </div>
         </div>
       </div>
     </section>
