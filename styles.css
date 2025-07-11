@@ -12,6 +12,9 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: #3c8fa1;
+}
 .logo-nav {
   width: 150px;
   height: auto;
@@ -156,35 +159,32 @@ p {
   padding: 0.8em;
   border: none;
   cursor: pointer;
-  background-color: #f9c74f;
+  background-color: #ffb300;
   text-decoration: none;
   margin: 25px auto;
   color: #000;
+  box-shadow: 0 0 20px #000000;
 }
 #primary-cta:hover {
-  background-color: #ffb300;
+  background-color: #f9c74f;
   color: #000;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px #ffe97c;
+  transition: all 0.3s ease;
 }
 /* FILMS SECTION */
 .films {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
-  /* align-content: center; */
   gap: 1.5rem;
-  /* padding: 2rem; */
 }
 .film-container {
   display: flex;
   flex-direction: column;
-  /* background: #fff; */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* max-width: 800px; */
   margin: 0 auto;
 }
 
@@ -209,7 +209,7 @@ p {
   line-height: 1.6;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1365px) {
   .films {
     flex-direction: row;
   }
@@ -228,12 +228,27 @@ p {
     padding: 2rem;
   }
 }
+
+@media (min-width: 1900px) {
+  .film-container {
+    width: 32.2%;
+  }
+
+  /* .film-thumbnail {
+    width: 100%;
+    height: auto;
+  }
+
+  .film-info {
+    padding: 2rem;
+  } */
+}
 /* BIO SECTION */
 
 .bio-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   max-width: 800px;
   margin: 2rem auto;
   background: #ddd;
@@ -390,11 +405,18 @@ form button:hover {
 footer nav {
   position: relative;
   background: none;
+  font-size: 1.2em;
 }
 
 footer p,
 footer ul {
   color: #8b8b8b;
+  font-size: 0.8em;
+}
+
+footer .logo {
+  width: 100%;
+  max-width: 100%;
 }
 /* VIDEO PLAYER */
 /* #videoPlayer {
