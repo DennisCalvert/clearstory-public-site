@@ -150,9 +150,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
         flex-direction: column;
-        align-content: center;
+        /* align-content: center; */
         gap: 1.5rem;
         /* padding: 2rem; */
       }
@@ -188,7 +188,7 @@
         line-height: 1.6;
       }
 
-      @media (min-width: 700px) {
+      @media (min-width: 900px) {
         .films {
           flex-direction: row;
         }
@@ -243,18 +243,18 @@
       }
 
       .bio-body {
-        display: none;
-        height: 0;
+        /* display: none; */
+        max-height: 0;
         overflow: hidden;
         transition: all 0.3s ease;
       }
       .bio-body-active {
         display: block;
-        height: auto;
+        max-height: 900px;
         overflow: visible;
       }
       .bio-toggle {
-        /* background: #3c8fa1; */
+        color: #3c8fa1;
         /* color: #fff; */
         border: none;
         padding: 0.5rem 1rem;
@@ -363,6 +363,10 @@
         }
       }
 
+      footer nav {
+        position: relative;
+        background: none;
+      }
       /* VIDEO PLAYER */
       /* #videoPlayer {
         position: fixed;
@@ -397,7 +401,7 @@
           src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/ClearStoryLogoWhite.png"
           class="logo-nav"
       /></a>
-      <a href="#about">About</a>
+      <!-- <a href="#about">About</a> -->
       <a href="#projects">Projects</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
@@ -450,13 +454,27 @@
         "
       ></div>
       <div class="content">
-        <h2>About Us</h2>
-        <p style="text-align: left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-          risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
-          ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula
-          massa, varius a, semper congue, euismod non, mi.
+        <h2>Get a Custom Video Quote</h2>
+        <button>Book a Free Creative Call</button>
+        <p>
+          Whether you’re launching a product, promoting a cause, or capturing a
+          performance — we’ll help you create content that resonates.
         </p>
+        <ul>
+          <li>Commercials</li>
+          <li>Branded Content</li>
+          <li>Documentary</li>
+          <li>Music Videos</li>
+          <li>Short Films</li>
+          <li>Commercial & Promotional Videos</li>
+          <li>Interviews & Testimonials</li>
+          <li>Event & Music Coverage</li>
+          <li>Corporate & Training Videos</li>
+          <li>Nonprofit & Cause-Driven Stories</li>
+          <li>Corporate & Internal Communications</li>
+          <li>Social Media Content (Short-Form & Vertical)</li>
+        </ul>
+        <p style="text-align: left">Let’s Tell Your Story.</p>
       </div>
     </section>
 
@@ -635,12 +653,12 @@
     </div>
 
     <section id="team">
-      <div
+      <!-- <div
         class="parallax-bg"
         style="
           background-image: url('https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/galleries/66d0a7ffeb739771171a6f22/images/l/67513839638388fc9bffb725.jpeg');
         "
-      ></div>
+      ></div> -->
       <div class="content">
         <h2>Our Team</h2>
         <p>
@@ -696,6 +714,7 @@
           <div class="bio-text">
             <h2 class="bio-name">Erin Williams</h2>
             <p class="bio-title">Sound</p>
+            <button class="bio-toggle">Read Bio</button>
             <div class="bio-body">
               <p class="bio-description">
                 Erin is a passionate storyteller with over a decade of
@@ -722,6 +741,7 @@
           <div class="bio-text">
             <h2 class="bio-name">Rachel Daniel</h2>
             <p class="bio-title">Project Manager</p>
+            <button class="bio-toggle">Read Bio</button>
             <div class="bio-body">
               <p class="bio-description">
                 Dennis is a passionate storyteller with over a decade of
@@ -802,6 +822,31 @@
         </div>
       </div>
     </section>
+    <footer style="text-align: center; padding: 75px; background: #111">
+      <img
+        src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/ClearStoryLogoWhite.png"
+        class="logo-nav"
+      />
+      <nav>
+        <!-- <a href="#about">About</a> -->
+        <a href="#projects">Projects</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p style="color: #8b8b8b">
+        © 2025 Clear Story Productions. All rights reserved.
+      </p>
+      <p style="color: #8b8b8b">
+        Website by
+        <a
+          href="https://denniscalvert.net"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #3c8fa1; text-decoration: none"
+          >Dennis Calvert</a
+        >
+      </p>
+    </footer>
 
     <!-- <div id="videoPlayer">
       <button id="closeFilm">X</button>
@@ -904,18 +949,26 @@
             });
         });
 
+      // ***************************
+      // Bio toggle functionality
+      // ***************************
       const bioButtonList = document.getElementsByClassName("bio-toggle");
       Array.from(bioButtonList).forEach((button) => {
         button.addEventListener("click", function () {
           console.log("Bio button clicked");
           const bioBody = this.nextElementSibling;
-          if (bioBody.style.display === "block") {
-            bioBody.style.display = "none";
-            this.textContent = "Read Bio";
-          } else {
-            bioBody.style.display = "block";
-            this.textContent = "Hide Bio";
-          }
+          bioBody.classList.toggle("bio-body-active");
+          this.textContent === "Read Bio"
+            ? (this.textContent = "Hide Bio")
+            : (this.textContent = "Read Bio");
+
+          // if (bioBody.style.display === "block") {
+          //   // bioBody.style.maxHeight = "none";
+          //   this.textContent = "Read Bio";
+          // } else {
+          //   // bioBody.style.display = "block";
+          //   this.textContent = "Hide Bio";
+          // }
         });
       });
     </script>
