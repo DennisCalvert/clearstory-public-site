@@ -23,14 +23,7 @@
     <!-- Spacer to offset fixed nav -->
     <div class="nav-spacer"></div>
     <div class="her-film">
-      <video
-        playsinline=""
-        muted=""
-        loop=""
-        id="myVideo"
-        style="width: 100%; height: auto"
-        autoplay
-      >
+      <video playsinline="" muted="" loop="" class="film-asset" autoplay>
         <source
           src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/films/clear-story-banner-dancer.mp4"
           type="video/mp4"
@@ -67,7 +60,6 @@
         <h2>Get a Custom Video Quote</h2>
         <div style="margin-top: 45px">
           <a href="#contact" id="primary-cta">Book a Free Creative Call</a>
-          <!-- <button id="primary-cta">Book a Free Creative Call</button> -->
         </div>
       </div>
     </section>
@@ -94,9 +86,8 @@
               playsinline=""
               muted=""
               loop=""
-              id="myVideo"
+              class="film-asset"
               controls
-              style="width: 100%; height: auto"
               poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/posters/C1683-1.jpg"
             >
               <source
@@ -128,9 +119,8 @@
               playsinline=""
               muted=""
               loop=""
-              id="myVideo"
+              class="film-asset"
               controls
-              style="width: 100%; height: auto"
               poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/posters/av+tv+spot_1.29.1.png"
             >
               <source
@@ -153,9 +143,8 @@
               playsinline=""
               muted=""
               loop=""
-              id="myVideo"
+              class="film-asset"
               controls
-              style="width: 100%; height: auto"
               poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/posters/juneteenth_1.13.1.png"
             >
               <source
@@ -182,9 +171,8 @@
               playsinline=""
               muted=""
               loop=""
-              id="myVideo"
+              class="film-asset"
               controls
-              style="width: 100%; height: auto"
               poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/posters/main-st-biz-poster.png"
             >
               <source
@@ -208,9 +196,8 @@
               playsinline=""
               muted=""
               loop=""
-              id="myVideo"
+              class="film-asset"
               controls
-              style="width: 100%; height: auto"
               poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/posters/main-st-parents-poster.png"
             >
               <source
@@ -234,9 +221,8 @@
               playsinline=""
               muted=""
               loop=""
-              id="myVideo"
+              class="film-asset"
               controls
-              style="width: 100%; height: auto"
               poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/posters/main+st+student_1.10.1.png"
             >
               <source
@@ -261,9 +247,8 @@
               playsinline=""
               muted=""
               loop=""
-              id="myVideo"
+              class="film-asset"
               controls
-              style="width: 100%; height: auto"
               poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/posters/geni-film-still.jpg"
             >
               <source
@@ -294,9 +279,8 @@
               playsinline=""
               muted=""
               loop=""
-              id="myVideo"
+              class="film-asset"
               controls
-              style="width: 100%; height: auto"
               poster="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/posters/arc+of+justice_1.1.1.png"
             >
               <source
@@ -468,16 +452,11 @@
             Birmingham, AL
           </p>
           <p>
-            <a
-              style="color: #3c8fa1; text-decoration: none"
-              href="tel:+2563390748"
-              id="phone-num"
-              >256-339-0748</a
-            >
+            <a href="tel:+2563390748" id="phone-num">256-339-0748</a>
           </p>
         </div>
         <div class="contact-block" id="contact-form-wrapper">
-          <p style="text-align: left">Let’s Tell Your Story.</p>
+          <p>Let’s Tell Your Story.</p>
           <form id="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required />
@@ -520,7 +499,7 @@
         </div>
       </div>
     </section>
-    <footer style="text-align: center; padding: 75px; background: #111">
+    <footer>
       <img
         src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/clearstory/ClearStoryLogoWhite.png"
         class="logo"
@@ -553,7 +532,7 @@
 
     <!-- <div id="videoPlayer">
       <button id="closeFilm">X</button>
-      <video playsinline="" muted="" loop="" id="myVideo" controls>
+      <video playsinline="" muted="" loop="" class="film-asset" controls>
         <source
           src="https://magiccityfilmmakers.s3.us-east-2.amazonaws.com/films/banner-web-no-audio.mp4"
           type="video/mp4"

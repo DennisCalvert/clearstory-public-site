@@ -209,6 +209,11 @@ p {
   line-height: 1.6;
 }
 
+.film-asset {
+  width: 100%;
+  height: auto;
+}
+
 @media (min-width: 1365px) {
   .films {
     flex-direction: row;
@@ -224,8 +229,12 @@ p {
   }
 
   .film-info {
-    width: 60%;
+    /* width: 60%; */
     padding: 2rem;
+  }
+
+  .film-description {
+    width: 60%;
   }
 }
 
@@ -402,6 +411,13 @@ form button:hover {
 #services {
   text-align: left;
 }
+
+footer {
+  text-align: center;
+  padding: 75px;
+  background: #111;
+}
+
 footer nav {
   position: relative;
   background: none;
