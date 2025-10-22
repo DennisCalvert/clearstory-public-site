@@ -34,7 +34,9 @@ document
     const formData = new FormData(this);
     const jsonData = JSON.stringify(Object.fromEntries(formData));
 
-    fetch("https://base-api-ts.herokuapp.com/mail", {
+    const API_URL = "https://base-api-ts.herokuapp.com/mail";
+    // const API_URL = "http://localhost:4000/mail";
+    fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
